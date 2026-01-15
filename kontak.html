@@ -1,0 +1,309 @@
+<!DOCTYPE html>
+<html lang="id">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Kontak - KampusEval</title>
+    <link rel="stylesheet" href="assets/css/style.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+</head>
+
+<body>
+
+    <!-- Navbar -->
+    <nav id="main-nav">
+        <div class="container nav-content">
+            <a href="index.html" class="logo">
+                <img src="assets/img/logo.png" alt="KampusEval Logo">
+            </a>
+            <ul class="nav-links">
+                <li class="user-only"><a href="index.html">Beranda</a></li>
+                <li class="user-only"><a href="about.html">Tentang</a></li>
+                <li class="user-only"><a href="panduan.html">Panduan</a></li>
+                <li class="user-only"><a href="kontak.html" class="active">Kontak</a></li>
+                <li id="evaluasi-link" style="display: none;"><a href="evaluasi.html">Evaluasi</a></li>
+                <li id="admin-link" style="display: none;"><a href="admin.html">Panel Admin</a></li>
+            </ul>
+            <div class="auth-btns" id="auth-buttons">
+                <a href="login.html" class="btn btn-outline">Login</a>
+                <a href="register.html" class="btn btn-primary">Register</a>
+            </div>
+            <div class="auth-btns" id="user-profile" style="display: none;">
+                <span id="user-name" style="font-weight: 600; margin-right: 1.5rem;">User Name</span>
+                <button id="logout-btn" class="btn btn-outline"
+                    style="padding: 0.4rem 1rem; font-size: 0.9rem;">Logout</button>
+            </div>
+            <div class="menu-toggle" id="mobile-menu">
+                <span></span>
+                <span></span>
+                <span></span>
+            </div>
+        </div>
+    </nav>
+
+    <header class="hero">
+        <div class="container">
+            <h1>Hubungi <span style="color: var(--secondary-color);">Kami</span></h1>
+            <p>Ada kendala atau ingin bertanya seputar KampusEval? Tim kami siap membantu.</p>
+        </div>
+    </header>
+
+    <main class="container">
+        <div class="grid-2">
+            <div class="contact-info">
+                <div class="card" style="margin-bottom: 2rem;">
+                    <h3>Informasi Kontak</h3>
+                    <ul style="margin-top: 2rem;">
+                        <li style="margin-bottom: 1.5rem; display: flex; gap: 1rem; align-items: center;">
+                            <i class="fas fa-location-dot"
+                                style="color: var(--secondary-color); font-size: 1.2rem;"></i>
+                            <span>Kota Sorong, Papua Barat Daya</span>
+                        </li>
+                        <li style="margin-bottom: 1.5rem; display: flex; gap: 1rem; align-items: center;">
+                            <i class="fas fa-envelope" style="color: var(--secondary-color); font-size: 1.2rem;"></i>
+                            <span>kampuseval@example.com</span>
+                        </li>
+                        <li style="display: flex; gap: 1rem; align-items: center;">
+                            <i class="fas fa-university" style="color: var(--secondary-color); font-size: 1.2rem;"></i>
+                            <span>Afiliasi: IT Sorong</span>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+
+            <div class="contact-form">
+                <div class="card">
+                    <h3>Kirim Pesan</h3>
+                    <div class="grid-2">
+                        <div class="form-group">
+                            <label for="contact-name">Nama Lengkap</label>
+                            <input type="text" id="contact-name" placeholder="Masukkan nama Anda" required>
+                        </div>
+                        <div class="form-group">
+                            <label for="contact-email">Email</label>
+                            <input type="email" id="contact-email" placeholder="Masukkan email Anda" required>
+                        </div>
+                    </div>
+                    <div class="form-group">
+                        <label for="contact-univ">Peran</label>
+                        <input type="text" id="contact-univ" placeholder="Masukkan peran Anda (contoh: Mahasiswa/Umum)"
+                            required>
+                    </div>
+                    <div class="grid-2">
+                        <div class="form-group">
+                            <label for="contact-city">Kota</label>
+                            <input type="text" id="contact-city" placeholder="Masukkan kota" required>
+                        </div>
+                        <div class="form-group">
+                            <label for="contact-province">Provinsi</label>
+                            <input type="text" id="contact-province" placeholder="Masukkan provinsi" required>
+                        </div>
+                    </div>
+                    <div class="form-group">
+                        <label for="contact-country">Negara</label>
+                        <input type="text" id="contact-country" placeholder="Masukkan negara" required>
+                    </div>
+                    <div class="form-group">
+                        <label for="contact-message">Pesan</label>
+                        <textarea id="contact-message" rows="5" placeholder="Tuliskan pesan Anda di sini..."
+                            required></textarea>
+                    </div>
+                    <button type="submit" class="btn btn-primary" style="width: 100%;">Kirim Pesan</button>
+                    </form>
+
+                    <!-- Success Receipt -->
+                    <div id="success-receipt" class="success-receipt">
+                        <div class="receipt-header">
+                            <i class="fas fa-check-circle"></i>
+                            <h4>Pesan Berhasil Terkirim!</h4>
+                        </div>
+                        <p style="color: #065f46; font-size: 0.9rem; margin-bottom: 1rem;">Berikut adalah rincian pesan
+                            Anda:</p>
+                        <div style="background: white; padding: 1.5rem; border-radius: 8px; border: 1px solid #d1fae5;">
+                            <p><strong>Nama:</strong> <span id="res-name"></span></p>
+                            <p style="margin-top: 0.5rem;"><strong>Peran:</strong> <span id="res-univ"></span></p>
+                            <p style="margin-top: 0.5rem;"><strong>Lokasi:</strong> <span id="res-location"></span></p>
+                            <p style="margin-top: 0.5rem;"><strong>Email:</strong> <span id="res-email"></span></p>
+                            <p style="margin-top: 0.5rem;"><strong>Waktu:</strong> <span id="res-time"></span></p>
+                            <hr style="margin: 1rem 0; border: 0; border-top: 1px solid #e2e8f0;">
+                            <p><strong>Isi Pesan:</strong></p>
+                            <p id="res-msg"
+                                style="font-style: italic; color: var(--text-secondary); margin-top: 0.5rem;"></p>
+                        </div>
+                        <button onclick="resetContactForm()" class="btn btn-outline"
+                            style="margin-top: 1.5rem; width: 100%;">Kirim Pesan Lain</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Section Ucapan & Pesan (Feed) -->
+        <section class="message-feed">
+            <div class="feed-header">
+                <h2 style="font-size: 2rem;">Pesan & Aspirasi Terbaru</h2>
+                <p>Melihat pesan dan aspirasi yang dikirimkan oleh siapa pun secara bebas.</p>
+            </div>
+            <div id="feed-container" class="feed-container">
+                <!-- Data dari Firestore akan muncul di sini secara otomatis -->
+                <div style="text-align: center; color: var(--text-secondary); padding: 3rem;">
+                    <i class="fas fa-spinner fa-spin" style="font-size: 2rem; margin-bottom: 1rem;"></i>
+                    <p>Memuat pesan...</p>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <!-- Footer -->
+    <footer style="margin-top: 8rem;">
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-info">
+                    <a href="index.html" class="footer-logo">
+                        <img src="assets/img/logo.png" alt="KampusEval Logo">
+                    </a>
+                    <p style="color: #94a3b8; margin-top: 1rem;">Sistem Informasi Evaluasi Kegiatan Kampus Digital.</p>
+                    <div class="footer-social">
+                        <a href="https://wa.me/6282198424487" target="_blank" title="WhatsApp"><i
+                                class="fab fa-whatsapp"></i></a>
+                        <a href="https://www.instagram.com/engineering_informatics22/" target="_blank"
+                            title="Instagram"><i class="fab fa-instagram"></i></a>
+                    </div>
+                </div>
+                <div class="footer-links">
+                    <h4>Navigasi</h4>
+                    <ul>
+                        <li><a href="index.html">Beranda</a></li>
+                        <li><a href="about.html">Tentang & Tim</a></li>
+                        <li><a href="panduan.html">Panduan</a></li>
+                    </ul>
+                </div>
+                <div class="footer-links">
+                    <h4>Bantuan</h4>
+                    <ul>
+                        <li><a href="kontak.html">Kontak</a></li>
+                        <li><a href="panduan.html#faq">FAQ</a></li>
+                    </ul>
+                </div>
+                <div class="footer-links">
+                    <h4>Afiliasi</h4>
+                    <p style="color: #94a3b8;">Mahasiswa IT Sorong</p>
+                    <p style="color: #94a3b8;">Tahun 2026</p>
+                </div>
+            </div>
+            <div class="footer-bottom">
+                <p>&copy; 2026 KampusEval. Layanan Kontak Masyarakat.</p>
+            </div>
+        </div>
+    </footer>
+
+    <script type="module" src="assets/js/firebase-config.js"></script>
+    <script type="module" src="assets/js/auth.js"></script>
+    <script type="module">
+        import { db } from './assets/js/firebase-config.js';
+        import { collection, addDoc, query, orderBy, onSnapshot, limit } from "https://www.gstatic.com/firebasejs/10.7.1/firebase-firestore.js";
+
+        const feedContainer = document.getElementById('feed-container');
+
+        // 1. LISTEN TO FIREBASE LIVE (Pesan Baru & Lama Muncul Otomatis)
+        const qFeed = query(collection(db, "contact_messages"), orderBy("waktu", "desc"), limit(50));
+
+        onSnapshot(qFeed, (snapshot) => {
+            feedContainer.innerHTML = ''; // Hapus tulisan "Memuat..."
+
+            if (snapshot.empty) {
+                feedContainer.innerHTML = '<p style="text-align:center; color: var(--text-secondary); padding: 2rem;">Belum ada pesan. Yuk, jadi yang pertama!</p>';
+                return;
+            }
+
+            snapshot.forEach((doc) => {
+                const data = doc.data();
+                const item = document.createElement('div');
+                item.className = 'feed-item';
+                item.innerHTML = `
+                    <h4>${data.nama}</h4>
+                    <div class="feed-time">
+                        <i class="far fa-clock"></i> ${data.waktu_stempel || 'Baru saja'}
+                    </div>
+                    <p class="feed-text">${data.pesan}</p>
+                `;
+                feedContainer.appendChild(item);
+            });
+        }, (error) => {
+            console.error("Error loading feed:", error);
+            feedContainer.innerHTML = '<p style="text-align:center; color: red; padding: 2rem;">Gagal memuat pesan. Pastikan Database Rules sudah diatur ke "allow read: if true;".</p>';
+        });
+
+        // 2. KIRIM PESAN KE FIREBASE
+        document.getElementById('contact-form').addEventListener('submit', async function (e) {
+            e.preventDefault();
+            const btn = e.target.querySelector('button');
+            const originalText = btn.textContent;
+
+            btn.disabled = true;
+            btn.textContent = 'Mengirim...';
+
+            const nameValue = document.getElementById('contact-name').value;
+            const emailValue = document.getElementById('contact-email').value;
+            const univValue = document.getElementById('contact-univ').value;
+            const cityValue = document.getElementById('contact-city').value;
+            const provinceValue = document.getElementById('contact-province').value;
+            const countryValue = document.getElementById('contact-country').value;
+            const msgValue = document.getElementById('contact-message').value;
+
+            // Buat tanggal format Indonesia
+            const now = new Date();
+            const timeString = now.toLocaleDateString('id-ID', {
+                weekday: 'long',
+                year: 'numeric',
+                month: 'long',
+                day: 'numeric',
+                hour: '2-digit',
+                minute: '2-digit'
+            });
+
+            try {
+                await addDoc(collection(db, "contact_messages"), {
+                    nama: nameValue,
+                    email: emailValue,
+                    universitas: univValue,
+                    kota: cityValue,
+                    provinsi: provinceValue,
+                    negara: countryValue,
+                    pesan: msgValue,
+                    waktu: now,
+                    waktu_stempel: timeString
+                });
+
+                // Update receipt display
+                document.getElementById('res-name').textContent = nameValue;
+                document.getElementById('res-email').textContent = emailValue;
+                document.getElementById('res-univ').textContent = univValue;
+                document.getElementById('res-location').textContent = `${cityValue}, ${provinceValue}, ${countryValue}`;
+                document.getElementById('res-time').textContent = timeString;
+                document.getElementById('res-msg').textContent = msgValue;
+
+                // Tampilkan receipt, sembunyikan form
+                document.getElementById('contact-form').style.display = 'none';
+                document.getElementById('success-receipt').style.display = 'block';
+
+                alert("Berhasil! Pesan Anda sudah terkirim ke database.");
+
+            } catch (error) {
+                console.error("Error saving:", error);
+                alert("Gagal kirim. Database menolak akses. Silakan cek lagi aturan (Rules) di Firebase Console.");
+            } finally {
+                btn.disabled = false;
+                btn.textContent = originalText;
+            }
+        });
+
+        // Sediakan reset global jika perlu
+        window.resetContactForm = () => {
+            location.reload();
+        }
+    </script>
+    <script src="assets/js/nav.js"></script>
+</body>
+
+</html>

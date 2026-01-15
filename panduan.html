@@ -1,0 +1,171 @@
+<!DOCTYPE html>
+<html lang="id">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Panduan Penggunaan - KampusEval</title>
+    <link rel="stylesheet" href="assets/css/style.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+</head>
+
+<body>
+
+    <!-- Navbar -->
+    <nav id="main-nav">
+        <div class="container nav-content">
+            <a href="index.html" class="logo">
+                <img src="assets/img/logo.png" alt="KampusEval Logo">
+            </a>
+            <ul class="nav-links">
+                <li class="user-only"><a href="index.html">Beranda</a></li>
+                <li class="user-only"><a href="about.html">Tentang</a></li>
+                <li class="user-only"><a href="panduan.html" class="active">Panduan</a></li>
+                <li class="user-only"><a href="kontak.html">Kontak</a></li>
+                <li id="evaluasi-link" style="display: none;"><a href="evaluasi.html">Evaluasi</a></li>
+                <li id="admin-link" style="display: none;"><a href="admin.html">Panel Admin</a></li>
+            </ul>
+            <div class="auth-btns" id="auth-buttons">
+                <a href="login.html" class="btn btn-outline">Login</a>
+                <a href="register.html" class="btn btn-primary">Register</a>
+            </div>
+            <div class="auth-btns" id="user-profile" style="display: none;">
+                <span id="user-name" style="font-weight: 600; margin-right: 1.5rem;">User Name</span>
+                <button id="logout-btn" class="btn btn-outline"
+                    style="padding: 0.4rem 1rem; font-size: 0.9rem;">Logout</button>
+            </div>
+        </div>
+    </nav>
+
+    <header class="hero">
+        <div class="container">
+            <h1>Panduan <span style="color: var(--secondary-color);">Penggunaan</span></h1>
+            <p>Ikuti langkah-langkah mudah di bawah ini untuk mulai memberikan evaluasi kegiatan.</p>
+        </div>
+    </header>
+
+    <main class="container">
+        <section class="guide-step" style="margin-bottom: 4rem;">
+            <div style="display: flex; gap: 2rem; align-items: flex-start;">
+                <div
+                    style="background: var(--secondary-color); color: white; width: 50px; height: 50px; border-radius: 50%; display: flex; align-items: center; justify-content: center; font-weight: 700; font-size: 1.5rem; flex-shrink: 0;">
+                    1</div>
+                <div>
+                    <h3>Pendaftaran Akun</h3>
+                    <p style="color: var(--text-secondary); margin-top: 0.5rem;">Klik tombol <strong>Register</strong>
+                        di halaman beranda. Isi data diri Anda seperti nama lengkap, email, password, dan status
+                        (Mahasiswa/Dosen/Umum). Data Anda akan tersimpan aman di sistem kami.</p>
+                </div>
+            </div>
+        </section>
+
+        <section class="guide-step" style="margin-bottom: 4rem;">
+            <div style="display: flex; gap: 2rem; align-items: flex-start;">
+                <div
+                    style="background: var(--secondary-color); color: white; width: 50px; height: 50px; border-radius: 50%; display: flex; align-items: center; justify-content: center; font-weight: 700; font-size: 1.5rem; flex-shrink: 0;">
+                    2</div>
+                <div>
+                    <h3>Login ke Sistem</h3>
+                    <p style="color: var(--text-secondary); margin-top: 0.5rem;">Setelah memiliki akun, masuk
+                        menggunakan email dan password yang telah didaftarkan. Anda perlu login untuk mengakses halaman
+                        evaluasi inti.</p>
+                </div>
+            </div>
+        </section>
+
+        <section class="guide-step" style="margin-bottom: 4rem;">
+            <div style="display: flex; gap: 2rem; align-items: flex-start;">
+                <div
+                    style="background: var(--secondary-color); color: white; width: 50px; height: 50px; border-radius: 50%; display: flex; align-items: center; justify-content: center; font-weight: 700; font-size: 1.5rem; flex-shrink: 0;">
+                    3</div>
+                <div>
+                    <h3>Mengisi Evaluasi</h3>
+                    <p style="color: var(--text-secondary); margin-top: 0.5rem;">Pilih menu <strong>Evaluasi</strong>
+                        yang muncul setelah Anda login. Pilih kegiatan yang ingin Anda evaluasi, isi form penilaian, dan
+                        berikan masukan konstruktif.</p>
+                </div>
+            </div>
+        </section>
+
+        <section class="guide-step" style="margin-bottom: 4rem;">
+            <div style="display: flex; gap: 2rem; align-items: flex-start;">
+                <div
+                    style="background: var(--secondary-color); color: white; width: 50px; height: 50px; border-radius: 50%; display: flex; align-items: center; justify-content: center; font-weight: 700; font-size: 1.5rem; flex-shrink: 0;">
+                    4</div>
+                <div>
+                    <h3>Upload Dokumentasi</h3>
+                    <p style="color: var(--text-secondary); margin-top: 0.5rem;">Jika Anda memiliki foto atau dokumen
+                        pendukung kegiatan, silakan upload melalui form yang tersedia. Dokumentasi ini sangat penting
+                        untuk validasi kegiatan.</p>
+                </div>
+            </div>
+        </section>
+
+        <section id="faq"
+            style="margin-top: 8rem; background: var(--white); padding: 3rem; border-radius: var(--border-radius); box-shadow: var(--shadow-sm);">
+            <h2 style="margin-bottom: 2rem; text-align: center;">Etika Pengisian</h2>
+            <ul style="color: var(--text-secondary);">
+                <li style="margin-bottom: 1rem;"><i class="fas fa-check-circle"
+                        style="color: var(--secondary-color); margin-right: 10px;"></i> Gunakan bahasa yang sopan dan
+                    profesional.</li>
+                <li style="margin-bottom: 1rem;"><i class="fas fa-check-circle"
+                        style="color: var(--secondary-color); margin-right: 10px;"></i> Berikan kritik yang membangun
+                    (constructive criticism).</li>
+                <li style="margin-bottom: 1rem;"><i class="fas fa-check-circle"
+                        style="color: var(--secondary-color); margin-right: 10px;"></i> Pastikan dokumentasi yang
+                    diupload relevan dengan kegiatan.</li>
+                <li style="margin-bottom: 1rem;"><i class="fas fa-check-circle"
+                        style="color: var(--secondary-color); margin-right: 10px;"></i> Jujur dalam memberikan penilaian
+                    objektif.</li>
+            </ul>
+        </section>
+    </main>
+
+    <!-- Footer -->
+    <footer style="margin-top: 8rem;">
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-info">
+                    <a href="index.html" class="footer-logo">
+                        <img src="assets/img/logo.png" alt="KampusEval Logo">
+                    </a>
+                    <p style="color: #94a3b8; margin-top: 1rem;">Sistem Informasi Evaluasi Kegiatan Kampus Digital.</p>
+                    <div class="footer-social">
+                        <a href="https://wa.me/6282198424487" target="_blank" title="WhatsApp"><i
+                                class="fab fa-whatsapp"></i></a>
+                        <a href="https://www.instagram.com/engineering_informatics22/" target="_blank"
+                            title="Instagram"><i class="fab fa-instagram"></i></a>
+                    </div>
+                </div>
+                <div class="footer-links">
+                    <h4>Navigasi</h4>
+                    <ul>
+                        <li><a href="index.html">Beranda</a></li>
+                        <li><a href="about.html">Tentang & Tim</a></li>
+                        <li><a href="panduan.html">Panduan</a></li>
+                    </ul>
+                </div>
+                <div class="footer-links">
+                    <h4>Bantuan</h4>
+                    <ul>
+                        <li><a href="kontak.html">Kontak</a></li>
+                        <li><a href="panduan.html#faq">FAQ</a></li>
+                    </ul>
+                </div>
+                <div class="footer-links">
+                    <h4>Afiliasi</h4>
+                    <p style="color: #94a3b8;">Mahasiswa IT Sorong</p>
+                    <p style="color: #94a3b8;">Tahun 2026</p>
+                </div>
+            </div>
+            <div class="footer-bottom">
+                <p>&copy; 2026 KampusEval. Pedoman Pengguna Digital.</p>
+            </div>
+        </div>
+    </footer>
+
+    <script type="module" src="assets/js/firebase-config.js"></script>
+    <script type="module" src="assets/js/auth.js"></script>
+</body>
+
+</html>

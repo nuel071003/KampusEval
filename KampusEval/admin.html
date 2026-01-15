@@ -1,0 +1,176 @@
+<!DOCTYPE html>
+<html lang="id">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Panel Admin - KampusEval</title>
+    <link rel="stylesheet" href="assets/css/style.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jspdf/2.5.1/jspdf.umd.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jspdf-autotable/3.5.25/jspdf.plugin.autotable.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/xlsx/0.18.5/xlsx.full.min.js"></script>
+    <style>
+        .admin-table-container {
+            background: white;
+            padding: 2rem;
+            border-radius: var(--border-radius);
+            box-shadow: var(--shadow-sm);
+            overflow-x: auto;
+            margin-top: 2rem;
+        }
+
+        table {
+            width: 100%;
+            border-collapse: collapse;
+            margin-top: 1rem;
+        }
+
+        th,
+        td {
+            text-align: left;
+            padding: 1rem;
+            border-bottom: 1px solid #f1f5f9;
+        }
+
+        th {
+            background-color: #f8fafc;
+            color: var(--text-secondary);
+            font-weight: 600;
+            text-transform: uppercase;
+            font-size: 0.8rem;
+        }
+
+        .badge {
+            padding: 0.25rem 0.75rem;
+            border-radius: 9999px;
+            font-size: 0.75rem;
+            font-weight: 600;
+        }
+
+        .badge-mahasiswa {
+            background: #dbeafe;
+            color: #1e40af;
+        }
+
+        .badge-dosen {
+            background: #fef3c7;
+            color: #92400e;
+        }
+
+        .badge-umum {
+            background: #f3f4f6;
+            color: #374151;
+        }
+
+        .admin-actions {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            margin-bottom: 1rem;
+            gap: 1rem;
+            flex-wrap: wrap;
+        }
+
+        .search-box {
+            position: relative;
+            flex-grow: 1;
+            max-width: 400px;
+        }
+
+        .search-box i {
+            position: absolute;
+            left: 1rem;
+            top: 50%;
+            transform: translateY(-50%);
+            color: var(--text-secondary);
+        }
+
+        .search-box input {
+            padding-left: 2.5rem;
+        }
+    </style>
+</head>
+
+<body>
+
+    <!-- Navbar -->
+    <nav id="main-nav">
+        <div class="container nav-content">
+            <a href="index.html" class="logo">
+                <img src="assets/img/logo.png" alt="KampusEval Logo">
+            </a>
+            <ul class="nav-links">
+                <li><a href="index.html">Beranda</a></li>
+                <li><a href="admin.html" class="active">Panel Admin</a></li>
+            </ul>
+            <div class="auth-btns" id="user-profile" style="display: flex;">
+                <span id="user-name" style="font-weight: 600; margin-right: 1.5rem;">Admin</span>
+                <button id="logout-btn" class="btn btn-outline"
+                    style="padding: 0.4rem 1rem; font-size: 0.9rem;">Logout</button>
+            </div>
+        </div>
+    </nav>
+
+    <header class="hero">
+        <div class="container">
+            <h1>Laporan <span style="color: var(--secondary-color);">Evaluasi</span></h1>
+            <p>Kelola dan analisis data evaluasi kegiatan dari seluruh pengguna dan kontributor.</p>
+        </div>
+    </header>
+
+    <main class="container" style="margin-bottom: 5rem;">
+        <div class="admin-table-container">
+            <div class="admin-actions">
+                <div class="search-box">
+                    <i class="fas fa-search"></i>
+                    <input type="text" id="admin-search" placeholder="Cari kegiatan atau nama...">
+                </div>
+                <div class="flex gap-2">
+                    <button id="export-excel" class="btn btn-outline" style="border-color: #16a34a; color: #16a34a;">
+                        <i class="fas fa-file-excel"></i> Export Excel
+                    </button>
+                    <button id="export-pdf" class="btn btn-outline" style="border-color: #ef4444; color: #ef4444;">
+                        <i class="fas fa-file-pdf"></i> Export PDF
+                    </button>
+                </div>
+            </div>
+
+            <table id="evaluasi-table">
+                <thead>
+                    <tr>
+                        <th>Waktu</th>
+                        <th>Nama / Role</th>
+                        <th>Instansi</th>
+                        <th>Kegiatan</th>
+                        <th>Rating</th>
+                        <th>Masukan</th>
+                        <th>Foto</th>
+                    </tr>
+                </thead>
+                <tbody id="admin-table-body">
+                    <tr>
+                        <td colspan="6" style="text-align: center; padding: 3rem;">
+                            <i class="fas fa-spinner fa-spin" style="font-size: 1.5rem; margin-bottom: 1rem;"></i>
+                            <p>Memuat data evaluasi...</p>
+                        </td>
+                    </tr>
+                </tbody>
+            </table>
+        </div>
+    </main>
+
+    <footer style="margin-top: 5rem;">
+        <div class="container">
+            <div class="footer-bottom">
+                <p>&copy; 2026 Panel Admin KampusEval.</p>
+            </div>
+        </div>
+    </footer>
+
+    <script type="module" src="assets/js/firebase-config.js"></script>
+    <script type="module" src="assets/js/auth.js"></script>
+    <script type="module" src="assets/js/admin.js"></script>
+</body>
+
+</html>

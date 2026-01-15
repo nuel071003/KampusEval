@@ -1,0 +1,198 @@
+<!DOCTYPE html>
+<html lang="id">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>KampusEval - Sistem Informasi Evaluasi Kampus</title>
+    <meta name="description"
+        content="KampusEval membantu mengumpulkan penilaian, masukan, dan dokumentasi kegiatan kampus secara digital dan terstruktur.">
+    <link rel="stylesheet" href="assets/css/style.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+</head>
+
+<body>
+
+    <!-- Navbar -->
+    <nav id="main-nav">
+        <div class="container nav-content">
+            <a href="index.html" class="logo">
+                <img src="assets/img/logo.png" alt="KampusEval Logo">
+            </a>
+            <ul class="nav-links">
+                <li class="user-only"><a href="index.html" class="active">Beranda</a></li>
+                <li class="user-only"><a href="about.html">Tentang</a></li>
+                <li class="user-only"><a href="panduan.html">Panduan</a></li>
+                <li class="user-only"><a href="kontak.html">Kontak</a></li>
+                <li id="evaluasi-link" style="display: none;"><a href="evaluasi.html">Evaluasi</a></li>
+                <li id="admin-link" style="display: none;"><a href="admin.html">Panel Admin</a></li>
+            </ul>
+            <div class="auth-btns" id="auth-buttons">
+                <a href="login.html" class="btn btn-outline">Login</a>
+                <a href="register.html" class="btn btn-primary">Register</a>
+            </div>
+            <div class="auth-btns" id="user-profile" style="display: none;">
+                <span id="user-name">User Name</span>
+                <button id="logout-btn" class="btn btn-outline">Logout</button>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Hero Section -->
+    <header class="hero">
+        <div class="container">
+            <div style="margin-bottom: 3rem;">
+                <img src="assets/img/logo.png" alt="KampusEval Large Logo"
+                    style="height: 200px; width: auto; filter: drop-shadow(0 15px 25px rgba(0,0,0,0.15));">
+            </div>
+            <h1>Evaluasi Kampus Kini Lebih <span style="color: var(--secondary-color);">Digital</span></h1>
+            <p>Dukung proses evaluasi kegiatan secara digital, terstruktur, dan terdokumentasi dengan KampusEval.
+                Suaramu memberikan dampak positif.</p>
+            <div class="flex justify-center gap-2" style="justify-content: center;">
+                <a href="register.html" class="btn btn-primary">Mulai Sekarang</a>
+                <a href="about.html" class="btn btn-outline">Pelajari Lebih Lanjut</a>
+            </div>
+        </div>
+    </header>
+
+    <!-- Highlights Section -->
+    <section class="highlights container">
+        <div class="card-grid">
+            <div class="card">
+                <div class="card-icon"><i class="fas fa-bolt"></i></div>
+                <h3>Cepat & Mudah</h3>
+                <p>Isi evaluasi kegiatan hanya dalam hitungan menit dari perangkat mana saja.</p>
+            </div>
+            <div class="card">
+                <div class="card-icon"><i class="fas fa-shield-halved"></i></div>
+                <h3>Terstruktur</h3>
+                <p>Data dikumpulkan secara rapi untuk mendukung laporan dan jurnal akademik.</p>
+            </div>
+            <div class="card">
+                <div class="card-icon"><i class="fas fa-cloud"></i></div>
+                <h3>Berbasis Cloud</h3>
+                <p>Keamanan data terjamin dengan integrasi Firebase Authentication dan Firestore.</p>
+            </div>
+        </div>
+    </section>
+
+    <!-- Perancangan Sistem Section -->
+    <section class="container" style="margin-top: 8rem;">
+        <div class="perancangan-box">
+            <h2>Perancangan Sistem (System Design)</h2>
+            <p style="color: #94a3b8; margin-top: 1rem;">KampusEval dirancang menggunakan arsitektur modern berbasis
+                Cloud untuk menjamin skalabilitas dan ketersediaan data secara real-time.</p>
+
+            <div class="perancangan-grid">
+                <div>
+                    <h3 style="font-size: 1.1rem;"><i class="fas fa-microchip"
+                            style="margin-right: 10px; color: var(--secondary-color);"></i> Arsitektur Frontend</h3>
+                    <p style="font-size: 0.9rem; color: #94a3b8; margin-top: 0.5rem;">Menggunakan Vanilla JavaScript
+                        dengan pola Module Pattern untuk enkapsulasi logika bisnis dan manajemen state autentikasi yang
+                        efisien.</p>
+                </div>
+                <div>
+                    <h3 style="font-size: 1.1rem;"><i class="fas fa-database"
+                            style="margin-right: 10px; color: var(--secondary-color);"></i> Database Schema</h3>
+                    <p style="font-size: 0.9rem; color: #94a3b8; margin-top: 0.5rem;">Struktur database NoSQL pada
+                        Firestore dirancang untuk fleksibilitas tinggi dalam penyimpanan data profil user dan koleksi
+                        evaluasi multi-kriteria.</p>
+                </div>
+                <div>
+                    <h3 style="font-size: 1.1rem;"><i class="fas fa-lock"
+                            style="margin-right: 10px; color: var(--secondary-color);"></i> Keamanan Data</h3>
+                    <p style="font-size: 0.9rem; color: #94a3b8; margin-top: 0.5rem;">Implementasi Firebase Security
+                        Rules untuk memastikan hanya pengguna terautentikasi yang dapat mengakses dan memodifikasi data
+                        sensitif.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Info Section Refined -->
+    <section class="info container">
+        <div class="grid-2 align-center">
+            <div>
+                <h2 style="font-size: 2.5rem; margin-bottom: 2rem;">Transformasi Digital Evaluasi</h2>
+                <p style="color: var(--text-secondary); margin-bottom: 2rem;">KampusEval bukan sekadar form online,
+                    melainkan upaya sistematis mahasiswa IT Sorong dalam mendigitalkan aspirasi akademik. Dengan
+                    visualisasi data yang baik, pengambil keputusan dapat melihat tren kepuasan pengguna secara
+                    objektif.</p>
+                <div class="flex gap-2" style="gap: 1rem;">
+                    <div class="workflow-step">
+                        <i class="fas fa-user-check" style="font-size: 1.5rem; color: var(--secondary-color);"></i>
+                        <h4 style="margin-top: 1rem;">Validasi Peserta</h4>
+                    </div>
+                    <div class="workflow-step">
+                        <i class="fas fa-file-export" style="font-size: 1.5rem; color: var(--secondary-color);"></i>
+                        <h4 style="margin-top: 1rem;">Dokumen Sah</h4>
+                    </div>
+                </div>
+            </div>
+            <div>
+                <img src="https://images.unsplash.com/photo-1523240795612-9a054b0db644?ixlib=rb-4.0.3&auto=format&fit=crop&w=1170&q=80"
+                    alt="Kampus Life"
+                    style="width: 100%; border-radius: 20px; box-shadow: var(--shadow-lg); height: 350px; object-fit: cover;">
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer>
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-info">
+                    <a href="index.html" class="footer-logo">
+                        <img src="assets/img/logo.png" alt="KampusEval Logo">
+                    </a>
+                    <p style="color: #94a3b8; margin-top: 1rem;">Sistem Informasi Evaluasi Kegiatan Kampus Digital.</p>
+                    <div class="footer-social">
+                        <a href="https://wa.me/6282198424487" target="_blank" title="WhatsApp"><i
+                                class="fab fa-whatsapp"></i></a>
+                        <a href="https://www.instagram.com/engineering_informatics22/" target="_blank"
+                            title="Instagram"><i class="fab fa-instagram"></i></a>
+                    </div>
+                </div>
+                <div class="footer-links">
+                    <h4>Navigasi</h4>
+                    <ul>
+                        <li><a href="index.html">Beranda</a></li>
+                        <li><a href="about.html">Tentang & Tim</a></li>
+                        <li><a href="panduan.html">Panduan</a></li>
+                    </ul>
+                </div>
+                <div class="footer-links">
+                    <h4>Bantuan</h4>
+                    <ul>
+                        <li><a href="kontak.html">Kontak</a></li>
+                        <li><a href="panduan.html#faq">FAQ</a></li>
+                    </ul>
+                </div>
+                <div class="footer-links">
+                    <h4>Afiliasi</h4>
+                    <p style="color: #94a3b8;">Mahasiswa IT Sorong</p>
+                    <p style="color: #94a3b8;">Tahun 2026</p>
+                </div>
+            </div>
+            <div class="footer-bottom">
+                <p>&copy; 2026 KampusEval. Made with <i class="fas fa-heart" style="color: #ef4444;"></i> in Sorong.</p>
+            </div>
+        </div>
+    </footer>
+
+    <script type="module" src="assets/js/firebase-config.js"></script>
+    <script type="module" src="assets/js/auth.js"></script>
+    <script>
+        // Navbar scroll effect
+        window.addEventListener('scroll', () => {
+            const nav = document.getElementById('main-nav');
+            if (window.scrollY > 50) {
+                nav.classList.add('scrolled');
+            } else {
+                nav.classList.remove('scrolled');
+            }
+        });
+    </script>
+</body>
+
+</html>
